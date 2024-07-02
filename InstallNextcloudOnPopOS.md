@@ -23,13 +23,9 @@ Install required packages:
 sudo apt update && sudo apt install -y needrestart needrestart-session mariadb-server php8.3 php-json php-date php8.3-{apcu,bcmath,ctype,curl,dom,exif,fileinfo,ftp,gd,gmp,iconv,imagick,intl,ldap,mbstring,memcached,mysqlnd,posix,readline,redis,sysvsem,tokenizer,xml,xmlreader,xmlwriter,zip} libapache2-mod-php build-essential redis-server ffmpeg fish ssh vim apt-transport-https && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y && sudo systemctl enable --now apache2 && sudo systemctl enable --now mariadb && systemctl enable --now ssh && chsh -s /usr/bin/fish && fish
 ```
 
-```
 configure fish:
+```
 fish_config theme choose "Bay Cruise" && fish_config theme save && fish_config prompt choose terlar && fish_config prompt save
-```
-
-```
-sudo fwupdmgr get-devices && sudo fwupdmgr get-updates && sudo fwupdmgr update
 ```
 
 ```
@@ -47,7 +43,11 @@ fish_config theme choose "Bay Cruise" && fish_config theme save && fish_config p
 ```
 
 exit
-exit
+
+Install firmware updates:
+```
+sudo fwupdmgr get-devices && sudo fwupdmgr get-updates && sudo fwupdmgr update
+```
 
 Create alias to use occ command that fixes the apc cli error until I can figure out how to fix that:
 
@@ -67,7 +67,6 @@ enable fix for occ commands:
 php --ini
 sudo vi /etc/php/8.3/cli/php.ini
 ```
-
 
 add this to the bottom:
 
@@ -115,7 +114,6 @@ sudo sed -i 's/memory_limit = 128/memory_limit = 512M/g; s/upload_max_filesize =
 sudo sed -i 's/memory_limit = -1/memory_limit = 512M/g; s/upload_max_filesize = 2M/upload_max_filesize = 900M/g; s/max_execution_time = 30/max_execution_time = 360/g; s/post_max_size = 8M/post_max_size = 900M/g; s/;date.timezone =/date.timezone = America/Chicago/g; s/;opcache.enable=1/opcache.enable=1/g; s/;opcache.enable_cli=0/opcache.enable_cli=1/g; s/;opcache.interned_strings_buffer=8/opcache.interned_strings_buffer=20/g; s/;opcache.max_accelerated_files=10000/opcache.max_accelerated_files=20000/g; s/;opcache.memory_consumption=128/opcache.memory_consumption=128/g; s/;opcache.save_comments=1/opcache.save_comments=1/g; s/;opcache.revalidate_freq=2/opcache.revalidate_freq=60/g; s/;opcache.validate_timestamps=1/opcache.validate_timestamps=1/g' /etc/php/8.3/cli/php.ini
 ```
 
-  
 Install PHP mods:
 
 ```
@@ -176,6 +174,7 @@ ServerName nextcloud
 
 </VirtualHost>' | sudo tee /etc/apache2/sites-available/nextcloud.conf > /dev/null
 ```
+
 Install the nextcloud site:
 
 ```
@@ -348,7 +347,6 @@ Change apache config to reflect tailscale network:
 ```
 sudo vi /etc/apache2/apache2.conf
 ```
-
 
 add to end:
 

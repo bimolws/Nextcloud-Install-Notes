@@ -5,3 +5,7 @@ Creating this to both have a place to access this when needed in the future and 
 
 ### InstallNextcloudOnPopOS.md
 These are my notes on installing Nextcloud on Pop!_OS with updated PHP and securing with tailscale, including obtaining a free certificate by use of the 'tailscale cert' command in order to enable https access. 
+
+### InstallNextcloudUbuntu24.04.md
+Notes with specifics for Ubuntu 24.04.
+

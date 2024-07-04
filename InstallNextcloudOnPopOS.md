@@ -393,7 +393,7 @@ if the php files look ok and restarting apache2 doesn't clear errors, then reboo
 
 if Collabora messes up after enabling https, choose own server and save.
 
-stup Client push:
+setup Client push:
 
 ```
 occ notify_push:setup

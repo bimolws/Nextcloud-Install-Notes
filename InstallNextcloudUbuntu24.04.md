@@ -35,7 +35,7 @@ fish_config theme choose "Bay Cruise" && fish_config theme save && fish_config p
 
 exit
 
-Create alias to use occ command that fixes the apc cli error until I can figure out how to fix that:
+Create alias to use occ command:
 
 ```
 echo 'function occ

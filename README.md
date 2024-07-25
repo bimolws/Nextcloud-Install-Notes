@@ -3,7 +3,7 @@ My personal notes on installing Nextcloud
 
 Creating this to both have a place to access this when needed in the future and for some reason my personal file is inaccessible, and to make available to the general public so that others might either find it of use or provide further refinements.
 
-There are different guides for different distros to take into account the different versions of PHP.
+There are different guides for different distros to take into account the different versions of PHP. Mostly geared toward the home user who wants a Nextcloud install that has https but doesn't have or want to pay for a domain, by way of using tailscale.
 
 ### InstallNextcloudOnPopOS.md
 These are my notes on installing Nextcloud on Pop!_OS with updated PHP and securing with tailscale, including obtaining a free certificate by use of the 'tailscale cert' command in order to enable https access. 

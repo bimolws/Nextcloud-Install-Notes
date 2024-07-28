@@ -78,7 +78,7 @@ enable fix for occ commands:
 
 ```
 php --ini
-sudo vi /etc/php/8.3/cli/php.ini
+sudo vi /etc/php/8.2/cli/php.ini
 ```
 
 add this to the bottom:
@@ -121,7 +121,19 @@ quit;
 Configure PHP:
 
 ```
-sudo sed -i 's/memory_limit = 128M/memory_limit = 512M/g; s/upload_max_filesize = 2M/upload_max_filesize = 900M/g; s/max_execution_time = 30/max_execution_time = 360/g; s/post_max_size = 8M/post_max_size = 900M/g; s/;date.timezone =/date.timezone = America/Chicago/g; s/;opcache.enable=1/opcache.enable=1/g; s/;opcache.enable_cli=0/opcache.enable_cli=0/g; s/;opcache.interned_strings_buffer=8/opcache.interned_strings_buffer=20/g; s/;opcache.max_accelerated_files=10000/opcache.max_accelerated_files=20000/g; s/;opcache.memory_consumption=128/opcache.memory_consumption=128/g; s/;opcache.save_comments=1/opcache.save_comments=1/g; s/;opcache.revalidate_freq=2/opcache.revalidate_freq=60/g; s/;opcache.validate_timestamps=1/opcache.validate_timestamps=1/g' /etc/php/8.2/apache2/php.ini
+sudo sed -i 's/memory_limit = 128M/memory_limit = 512M/g' /etc/php/8.2/apache2/php.ini
+sudo sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 900M/g' /etc/php/8.2/apache2/php.ini
+sudo sed -i 's/max_execution_time = 30/max_execution_time = 360/g' /etc/php/8.2/apache2/php.ini
+sudo sed -i 's/post_max_size = 8M/post_max_size = 900M/g' /etc/php/8.2/apache2/php.ini
+sudo sed -i 's/;date.timezone =/date.timezone = America\/Chicago/g' /etc/php/8.2/apache2/php.ini
+sudo sed -i 's/;opcache.enable=1/opcache.enable=1/g' /etc/php/8.2/apache2/php.ini
+sudo sed -i 's/;opcache.enable_cli=0/opcache.enable_cli=0/g' /etc/php/8.2/apache2/php.ini
+sudo sed -i 's/;opcache.interned_strings_buffer=8/opcache.interned_strings_buffer=20/g' /etc/php/8.2/apache2/php.ini
+sudo sed -i 's/;opcache.max_accelerated_files=10000/opcache.max_accelerated_files=20000/g' /etc/php/8.2/apache2/php.ini
+sudo sed -i 's/;opcache.memory_consumption=128/opcache.memory_consumption=128/g' /etc/php/8.2/apache2/php.ini
+sudo sed -i 's/;opcache.save_comments=1/opcache.save_comments=1/g' /etc/php/8.2/apache2/php.ini
+sudo sed -i 's/;opcache.revalidate_freq=2/opcache.revalidate_freq=60/g' /etc/php/8.2/apache2/php.ini
+sudo sed -i 's/;opcache.validate_timestamps=1/opcache.validate_timestamps=1/g' /etc/php/8.2/apache2/php.ini
 ```
 
 ```
